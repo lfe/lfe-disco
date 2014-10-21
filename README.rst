@@ -1,6 +1,6 @@
-#########
-lfe-disco
-#########
+######
+ldisco
+######
 
 
 Introduction
