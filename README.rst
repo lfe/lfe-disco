@@ -25,15 +25,15 @@ directory of this project when you run ``make deps``:
 Installation
 ============
 
-To inlcude ``lfe-disco`` in your project, simply update the deps section
+To inlcude ``ldisco`` in your project, simply update the deps section
 of your ``rebar.config``:
 
 .. code:: erlang
 
     {deps, [
       {lfe, ".*", {git, "git://github.com/rvirding/lfe.git", "develop"}},
-      {'lfe-disco',
-        ".*", {git, "git://github.com/lfe/lfe-disco.git"}}
+      {'ldisco',
+        ".*", {git, "git://github.com/lfe/ldisco.git"}}
     ]}
 
 
