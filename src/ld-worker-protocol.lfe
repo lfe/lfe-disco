@@ -7,6 +7,7 @@
 
 (defun encode (name payload)
   (let* ((type (list_to_binary name))
+         ;; XXX change to use ljson instead of jiffy once ljson is ready
          (body (jiffy:encode payload))
          (length (list_to_binary (integer_to_list (byte_size body)))))
     (binary (type binary) " " (length binary) " " (body binary) "\n")))
@@ -16,6 +17,12 @@
     (list (binary_to_list type) (jiffy:decode body))))
 
 ;;; From Worker to Disco
+(defun worker (version pid)
+  ;; XXX create orddict with version and pid in it
+  ;; XXX convert to JSON
+  ;; call (worker converted)
+  'not-implemented)
+
 (defun worker (payload)
   "Announce the startup of the worker.
 
