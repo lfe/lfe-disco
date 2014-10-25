@@ -14,7 +14,7 @@
          (exports (proplists:get_value
                     'exports
                        (element 2 (element 2 chunks)))))
-    (is-equal 6 (length exports))))
+    (is-equal 22 (length exports))))
 
 (deftest constants
   (is-equal 104857600 (ld-worker-protocol:max-message-length)))
@@ -72,3 +72,14 @@
     (is-equal #b("HIJKL") type-3)
     (is-equal #b("a") body-3)
     (is-equal #b("tail") rest-3)))
+
+(deftest encode
+  (is-equal #b("ABC 10 [97,98,99]\n") (ld-worker-protocol:encode "ABC" "abc")))
+
+(deftest decode
+  (let* ((data #b("ABC 10 [97,98,99]\n"))
+         ((list name payload) (ld-worker-protocol:decode data)))
+    (is-equal "ABC" name)
+    (is-equal "abc" payload)))
+
+
