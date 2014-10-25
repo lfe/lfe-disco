@@ -17,6 +17,19 @@
 
 ;;; From Worker to Disco
 (defun worker (payload)
+  "Announce the startup of the worker.
+
+  The payload is a dictionary containing the following information:
+  * version   The version of the message protocol the worker is using, as a
+              string.
+  * pid       The integer pid of the worker.
+
+  The worker should send this so it can be properly killed, (e.g. if there’s a
+  problem with the job). This is currently required due to limitations in the
+  Erlang support for external spawned processes.
+
+  The worker should send a WORKER message before it sends any others. Disco
+  should respond with an OK if it intends to use the same version."
   (encode "WORKER" payload))
 
 (defun task (payload)
