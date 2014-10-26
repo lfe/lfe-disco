@@ -21,7 +21,7 @@ of your ``rebar.config``:
 ```erlang
 
     {deps, [
-      {ldisco, ".*", {git, "git://github.com/billosys/ldisco.git"}}
+      {ldisco, ".*", {git, "git://github.com/thorgisl/ldisco.git"}}
     ]}
 ```
 
