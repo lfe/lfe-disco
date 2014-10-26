@@ -8,13 +8,13 @@
 (defun encode (name payload)
   (let* ((type (list_to_binary name))
          ;; XXX change to use ljson instead of jiffy once ljson is ready
-         (body (jiffy:encode payload))
+         (body (ljson:encode payload))
          (length (list_to_binary (integer_to_list (byte_size body)))))
     (binary (type binary) " " (length binary) " " (body binary) "\n")))
 
 (defun decode (data)
   (let ((`#(ok #(,type ,body) ,_ ,_) (parse data)))
-    (list (binary_to_list type) (jiffy:decode body))))
+    (list (binary_to_list type) (ljson:decode body))))
 
 ;;; From Worker to Disco
 (defun worker (version pid)
