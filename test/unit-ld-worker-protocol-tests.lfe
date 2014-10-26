@@ -14,7 +14,7 @@
          (exports (proplists:get_value
                     'exports
                        (element 2 (element 2 chunks)))))
-    (is-equal 22 (length exports))))
+    (is-equal 23 (length exports))))
 
 (deftest constants
   (is-equal 104857600 (ld-worker-protocol:max-message-length)))
