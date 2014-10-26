@@ -17,13 +17,10 @@
     (list (binary_to_list type) (ljson:decode body))))
 
 ;;; From Worker to Disco
-(defun worker (version pid)
-  ;; XXX create orddict with version and pid in it
-  ;; XXX convert to JSON
-  ;; call (worker converted)
-  'not-implemented)
+(defun start (pid)
+  (start "1.1" pid))
 
-(defun worker (payload)
+(defun start (version pid)
   "Announce the startup of the worker.
 
   The payload is a dictionary containing the following information:
@@ -37,7 +34,15 @@
 
   The worker should send a WORKER message before it sends any others. Disco
   should respond with an OK if it intends to use the same version."
-  (encode "WORKER" payload))
+  ;; Usage:
+  ;;
+  ;; > (set data (ld-worker-protocol:start 'pidname))
+  ;; #B(87 79 82 75 69 82 32 51 56 32 123 34 118 101 114 ...)
+  ;; > (ljson:print (ld-worker-protocol:decode data))
+  ;; ["WORKER",[{<<"version">>,"1.1"},{<<"pid">>,<<"pidname">>}]]
+  ;; ok
+  ;; >
+  (encode "WORKER" `(#(version ,version) #(pid ,pid))))
 
 (defun task (payload)
   (encode "TASK" payload))
