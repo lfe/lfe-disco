@@ -20,12 +20,12 @@ in your ``$PATH``.
 To inlcude ``ldisco`` in your project, simply update the deps section
 of your ``rebar.config``:
 
-.. code:: erlang
+```erlang
 
     {deps, [
       {ldisco, ".*", {git, "git://github.com/billosys/ldisco.git"}}
     ]}
-
+```
 
 ## Usage
 
