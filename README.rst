@@ -2,6 +2,8 @@
 ldisco
 ######
 
+<img src="resources/images/ldisco.png" />
+
 
 Introduction
 ============
