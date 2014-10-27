@@ -37,9 +37,9 @@ done)
 Disco Core and DFS have the overall architectures as depicted in the following
 diagrams:
 
-<img src="resources/images/disco-core-architecture.png" />
+<img src="resources/images/disco-core-architecture.jpg" />
 
-<img src="resources/images/disco-dfs-architecture.png" />
+<img src="resources/images/disco-dfs-architecture.jpg" />
 
 
 ## An LFE Client Library
