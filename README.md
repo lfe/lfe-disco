@@ -34,10 +34,22 @@ done)
 
 ## Architecture
 
+Disco Core and DFS have the overall architectures as depicted in the following
+diagrams:
+
+<img src="resources/images/disco-core-architecture.png" />
+
+<img src="resources/images/disco-dfs-architecture.png" />
+
+
+## An LFE Client Library
 
 ### Initial Plan
 
 In order to build an LFE Disco client, the following components were needed:
+ * Configuration for Disco (so the client knows where Disco is, etc.)
+ * Something that can make HTTP requests to the Disco master (and parse the
+   results)
  * Something that can read and write the Disco worker protocol
  * Something that can read from stdout and write to stdin
  * Something that can exercise all possible workflows in the communications
