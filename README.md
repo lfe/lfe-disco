@@ -97,24 +97,6 @@ XXX
 
 ## Terms
 
-Disco
-: XXX
-
-Disco server
-: XXX
-
-Disco worker
-: XXX
-
-Disco protocol
-: XXX
-
-Disco tasks
-: XXX
-
-ldisco
-: XXX
-
-ldisco worker
-: XXX
-
+For a list of terms as used in this project as well as the Disco project
+and its documentation, see
+[the glossary](http://disco.readthedocs.org/en/latest/glossary.html).
